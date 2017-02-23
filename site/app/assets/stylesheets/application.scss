@@ -2,12 +2,16 @@
 @import "variables";
 @import "bootstrap";
 
-#header {
+header {
   background-color: $primary-color;
 }
-.navbar {
-  background-color: $secondary-color;
+#navbar-logo {
+  background-color: $primary-color;
+  
 }
+#navbar-links {
+  background-color: $secondary-color;  
+}  
 body {
   background-color: #000000;
 }
