@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Site</title>
+    <title>Landing Page</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -49,18 +49,19 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav ">
-              <li><a href="#myPage">Fuel</a></li>
-              <li><a href="#band">Lubricants</a></li>
-              <li><a href="#tour">DEF & Antifreeze</a></li>
-              <li><a href="#contact">Tires</a></li>
+              <li><%= link_to 'Fuel', controller: 'pages' %></li>
+              <li><%= link_to 'Lubricants', controller: 'pages' %></li>
+              <li><%= link_to 'DEF & Antifreeze', controller: 'pages' %></li>
+              <li><%= link_to 'Tires', controller: 'pages' %></li>
               <li><%= link_to 'Hydraulic Hoses & Fittings', controller: 'pages' %></li>
               <li><%= link_to 'Batteries', controller: 'pages' %></li>
               <li class="dropdown">
-                <a class="dropdown" data-toggle="dropdown"  href="#">Our Brands
-                <span class="caret"></span></a>
+                <%= link_to 'Our Brands',  controller: 'pages',class: 'dropdown' do %>
+                  <span class="caret"></span>
+                <% end %>
                 <ul class="dropdown-menu">
-                  <li>Gas N Go</li>
-                  <li>Perry's Chicken</li>
+                  <%= link_to 'Gas N Go', controller: 'pages' %>
+                  <%= link_to 'Perry's Chicken', controller: 'pages' %>
                 </ul>
               </li>
               <li class="dropdown">
