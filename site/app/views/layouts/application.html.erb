@@ -22,7 +22,7 @@
           </button>
           <a href="#" >
 <!--            <h1>Perry Brothers Oil Co, Inc.</h1>-->
-            <%= image_tag "Perry Brothers Oil.png",  alt: "Perry Brothers Oil Company, Inc.", class: 'image-responsive' %>
+            <%= link_to image_tag "Perry Brothers Oil.png",  alt: "Perry Brothers Oil Company, Inc.", class: 'image-responsive' %>
           </a>
         </div>
      <div class="container">  
@@ -56,22 +56,26 @@
               <li><%= link_to 'Hydraulic Hoses & Fittings', controller: 'pages' %></li>
               <li><%= link_to 'Batteries', controller: 'pages' %></li>
               <li class="dropdown">
-                <%= link_to 'Our Brands',  controller: 'pages',class: 'dropdown' do %>
+<!-- Need to add data-toggle: dropdown below in link_to  -->
+                <%= link_to 'Our Brands',  controller: 'pages', :class => 'dropdown' do %>
                   <span class="caret"></span>
                 <% end %>
                 <ul class="dropdown-menu">
                   <%= link_to 'Gas N Go', controller: 'pages' %>
-                  <%= link_to 'Perry's Chicken', controller: 'pages' %>
+                  <%= link_to 'Perrys Chicken', controller: 'pages' %>
                 </ul>
               </li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Who We are?
-                  <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact Us</a></li> 
-                  </ul>
+<!-- Need to add data-toggle: dropdown below in link_to -->
+                <%= link_to 'Who We Are', controller: 'pages', :class => 'dropdown-toggle' do %>
+                    <span class="caret"></span>
+                <% end %>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'About Us', controller: 'pages' %></li>
+                  <li><%= link_to 'Careers', controller: 'pages'  %></li>
+                  <li><%= link_to 'Blog', contrlller: 'pages' %>
+                  <li><%= link_to 'Contact Us', controller: 'pages' %></li> 
+                </ul>
               </li>
             </ul>
           </div>
@@ -81,5 +85,8 @@
   </header>  
 <!-- End HEADER -->
     <%= yield %>
+    
+<!--Render Footer Partial -->
+    <%= render :partial => "footer" %>
   </body>
 </html>

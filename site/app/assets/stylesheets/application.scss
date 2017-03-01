@@ -2,9 +2,7 @@
 @import "variables";
 @import "bootstrap";
 
-header {
-  background-color: $primary-color;
-}
+
 #navbar-logo {
   background-color: $primary-color;
   
@@ -13,5 +11,12 @@ header {
   background-color: $secondary-color;  
 }  
 body {
-  background-color: #000000;
+  margin-bottom: 60px; 
 }
+footer {
+  background-color: $footer-color;
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+} 
