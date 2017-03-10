@@ -10,73 +10,36 @@
 
   <body>
 <!-- HEADER -->    
-  <header>  
-<!-- Begin Nabar-logo -->    
-    <nav class="navbar navbar-default" id="navbar-logo">
-<!--      <div class="container"> -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-          <a href="#" >
-<!--            <h1>Perry Brothers Oil Co, Inc.</h1>-->
-            <%= link_to image_tag "Perry Brothers Oil.png",  alt: "Perry Brothers Oil Company, Inc.", class: 'image-responsive' %>
-          </a>
-        </div>
-     <div class="container">  
-        <div class="collapse navbar-collapse" id="myNavbar">
+  <header>      
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">	
+          <%= link_to image_tag "Perry Brothers Oil.png",  alt: "Perry Brothers Oil Company, Inc.", class: 'image-responsive' %>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Home', controller: 'pages' %></li>
             <li><%= link_to 'Store', spree.root_path %></li>
             <li><%= link_to 'Login', spree.login_path %></li>
           </ul>
         </div>
-     </div>
-<!--      </div> -->
-    </nav>  
-<!--END Navbar-logo -->
+      </div>  
 <!--Begin Navbar-links -->
-    <nav class="navbar navbar-default" id="navbar-links">
         <div class="container-fluid">
           <div class="navbar navbar-nav">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBarLinks">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>                        
             </button>
           </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
+          <div class="collapse navbar-collapse" id="navBarLinks">
             <ul class="nav navbar-nav ">
+              <li class="active"><%= link_to 'Home', controller: 'pages' %></li>
               <li><%= link_to 'Fuel', controller: 'pages' %></li>
               <li><%= link_to 'Lubricants', controller: 'pages' %></li>
               <li><%= link_to 'DEF & Antifreeze', controller: 'pages' %></li>
               <li><%= link_to 'Tires', controller: 'pages' %></li>
               <li><%= link_to 'Hydraulic Hoses & Fittings', controller: 'pages' %></li>
               <li><%= link_to 'Batteries', controller: 'pages' %></li>
-              <li class="dropdown">
-<!-- Need to add data-toggle: dropdown below in link_to  -->
-                <%= link_to 'Our Brands',  controller: 'pages', :class => 'dropdown' do %>
-                  <span class="caret"></span>
-                <% end %>
-                <ul class="dropdown-menu">
-                  <%= link_to 'Gas N Go', controller: 'pages' %>
-                  <%= link_to 'Perrys Chicken', controller: 'pages' %>
-                </ul>
-              </li>
-              <li class="dropdown">
-<!-- Need to add data-toggle: dropdown below in link_to -->
-                <%= link_to 'Who We Are', controller: 'pages', :class => 'dropdown-toggle' do %>
-                    <span class="caret"></span>
-                <% end %>
-                <ul class="dropdown-menu">
-                  <li><%= link_to 'About Us', controller: 'pages' %></li>
-                  <li><%= link_to 'Careers', controller: 'pages'  %></li>
-                  <li><%= link_to 'Blog', contrlller: 'pages' %>
-                  <li><%= link_to 'Contact Us', controller: 'pages' %></li> 
-                </ul>
-              </li>
+              <li><%= link_to 'Become A Client', controller: ''ages' %></li>
             </ul>
           </div>
         </div>
@@ -84,6 +47,7 @@
 <!-- End Navbar-links -->
   </header>  
 <!-- End HEADER -->
+
     <%= yield %>
     
 <!--Render Footer Partial -->
